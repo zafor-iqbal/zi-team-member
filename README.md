@@ -1,4 +1,4 @@
-# zi-team-member
+# zi-team-member (WordPress Plugin)
 
 ## Description
 
