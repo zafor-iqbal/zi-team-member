@@ -1,0 +1,56 @@
+/* Front-end css */
+
+
+/* Shortcode */
+
+.team-members{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team-member{
+    padding: 20px;
+    text-align: center;
+}
+
+.team-member img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.team-members-button{
+    text-align: center;
+}
+
+
+/* Single Post*/
+
+.team-member-single{
+    text-align: center;
+}
+
+.team-member-single h1{
+    /* text-align: center; */
+}
+
+.team-member-single img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.single-member-bio{
+    padding: 10px;
+    max-width: 500px;
+    /* text-align: center; */
+    margin: auto;
+}
+
+
+/* Pagination */
+
+.pagination {
+    justify-content: center!important;
+}
