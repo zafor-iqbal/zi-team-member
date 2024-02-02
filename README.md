@@ -1,5 +1,5 @@
 # zi-team-member
 
-## WordPress Plugin ##
+## Description
 
-### Creates custom post type names team_member ### 
+Registers a custom post type for Team Members, a taxonomy for Member Types, and provides a shortcode to display them.
