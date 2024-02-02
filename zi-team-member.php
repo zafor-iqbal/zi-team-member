@@ -15,6 +15,29 @@
     exit; // Exit if accessed directly
 }
 
+// Flush rewrite rules on plugin activation
+function team_members_plugin_activation() {
+    // flush_rewrite_rules();
+    // force rewrite rules to be recreated at the right time
+	delete_option( 'rewrite_rules' );
+}
+register_activation_hook(__FILE__, 'team_members_plugin_activation');
+
+// Flush rewrite rules on plugin deactivation
+function team_members_plugin_deactivation() {
+    flush_rewrite_rules();
+}
+register_deactivation_hook(__FILE__, 'team_members_plugin_deactivation');
+
+
+// Flush rewrite rules on settings save
+if (isset($_GET['settings-updated']) && $_GET['settings-updated']) {
+    flush_rewrite_rules();
+}
+
+
+
+
 class Team_Members_Plugin {
 
     private $post_type_name;
@@ -371,23 +394,3 @@ function team_member_pagination($query) {
     }
 }
 add_action('pre_get_posts', 'team_member_pagination');
-
-
-
-// Flush rewrite rules on plugin activation
-function team_members_plugin_activation() {
-    flush_rewrite_rules();
-}
-register_activation_hook(__FILE__, 'team_members_plugin_activation');
-
-// Flush rewrite rules on plugin deactivation
-function team_members_plugin_deactivation() {
-    flush_rewrite_rules();
-}
-register_deactivation_hook(__FILE__, 'team_members_plugin_deactivation');
-
-
-// Flush rewrite rules on settings save
-if (isset($_GET['settings-updated']) && $_GET['settings-updated']) {
-    flush_rewrite_rules();
-}
