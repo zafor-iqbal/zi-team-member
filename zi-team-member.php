@@ -302,6 +302,8 @@ class Team_Members_Plugin {
         return $output;
     }
 
+
+    // Archive page pagination 
     public function modify_team_member_query($query) {
         if (!is_admin() && $query->is_main_query() && is_post_type_archive('team_member')) {
             // Define the number of team members per page
